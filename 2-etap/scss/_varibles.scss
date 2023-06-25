@@ -1,0 +1,147 @@
+$pr-font: "Space Mono";
+:root {
+  --color-sky: #0079ff;
+  --color-grey: #697c9a;
+  --color-blue: #4b6a9b;
+  --color-black: #2b3442;
+  --color-light-white: #f6f8ff;
+  --color-white: #ffffff;
+  --in-color: #222731;
+  --light: url("/images/moon.svg");
+}
+.dark {
+  --light: url("./images/sun.svg");
+  --color-sky: #0079ff;
+  --color-grey: #ffffff;
+  --color-blue: #ffffff;
+  --in-color: #ffffff;
+  --color-black: #2b3442;
+  --color-light-white: #141d2f;
+  --color-white: #ffffff;
+}
+@mixin media($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: all 0.3s ease;
+  font-family: "Space Mono";
+}
+html {
+  height: 100%;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  background: var(--color-light-white);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+main {
+  flex-grow: 1;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none !important;
+  margin: 0;
+  color: inherit;
+}
+h1 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+h2 {
+  margin: 0;
+}
+h3 {
+  margin: 0;
+}
+img {
+  width: 100%;
+  height: auto;
+  object-position: center;
+  object-fit: cover;
+}
+ul {
+  margin: 0;
+}
+li {
+  margin: 0;
+}
+.container {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 13px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  margin-right: auto;
+  color: var(--in-color);
+  font-size: 18px;
+  line-height: 25px;
+  outline: none;
+  &::placeholder {
+    color: var(--color-blue);
+  }
+}
+.site-btn {
+  border-radius: 10px;
+  background: var(--color-sky);
+  padding: 13px 24px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 1;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+#btn {
+  transition: all 0.5s ease;
+  width: 78px;
+  height: 20px;
+  background-image: var(--light);
+  background-size: cover 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
